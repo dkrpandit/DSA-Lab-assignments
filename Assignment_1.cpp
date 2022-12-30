@@ -16,11 +16,6 @@ const int num = 15;
 using namespace std;
 class student
 {
-
-    // private:
-    //     int roll_no;
-    //     char name[20];
-    //     float SGPA;
 public:
     int roll_no;
     char name[20];
@@ -98,6 +93,7 @@ void student::insertion_sort(student s[], int size)
 
 void student::QuickSort(student s[num], int first, int last)
 {
+    // last=10;
     int pivot, i, j;
     student temp;
     if (first < last)
@@ -132,9 +128,9 @@ void student::search(student s[], int size)
     float SGPA;
     cout << "Enter SGPA:-  ";
     cin >> SGPA;
-    cout << "Roll Number\t"
+       cout << "Roll Number\t"
          << "Name\t"
-         << "SGPA\n";
+         << "SGPA\n";  
     for (int i = 0; i < size; i++)
     {
         if (SGPA == s[i].SGPA)
@@ -170,10 +166,10 @@ int student::binary_search(student s[], int low, int high)
 }
 int main()
 {
-    int size;
+    int size=15;
 
-    cout << "Enter number of student \n";
-    cin >> size;
+    // cout << "Enter number of student \n";
+    // cin >> size;
     student list[size];
     student obj;
     obj.accept_student_data(list, size);
@@ -200,9 +196,9 @@ int main()
             obj.Display(list, size);
             break;
         case 3:
-            obj.insertion_sort(list, size); // sort name
+            // obj.insertion_sort(list, size); // sort name
             obj.QuickSort(list, 0, num - 1);
-            obj.Display(list, num);
+            obj.Display(list, 10);
             break;
         case 4:
             obj.search(list, size);
@@ -212,7 +208,7 @@ int main()
             int result = obj.binary_search(list, 0, (size - 1));
             if (result == -1)
             {
-                cout << " \n Student name not present in our record \n";
+                cout << "\nStudent name not present in our record \n";
             }
             else
             {
@@ -231,9 +227,8 @@ int main()
 /*
 Output :-
 
-Enter number of student 
-15 34 Balram 8.65 56 Mukesh 9.56 12 Chandan 7.89 23 Akash 9.67 65 Ravindra 8.67 45 Jitendra 9.78 4 Vijay 9.75 30 Pankaj 8.67 7 Pujan 8.67 5 Alok 9.56 11 Manoj 9.76 97 Rakesh 9.99 49 Laukesh 7.56 20 Vikash 8.68 15 Mohan 9.45
 Enter your roll number 
+34 Balram 8.65 56 Mukesh 9.56 12 Chandan 7.89 23 Akash 9.67 65 Ravindra 8.67 45 Jitendra 9.78 4 Vijay 9.75 30 Pankaj 8.67 7 Pujan 8.67 5 Alok 9.56 11 Manoj 9.76 97 Rakesh 9.99 49 Laukesh 7.56 20 Vikash 8.68 15 Mohan 9.45
 Enter your name 
 Enter your SGPA 
 Enter your roll number 
@@ -246,10 +241,10 @@ Enter your roll number
 Enter your name 
 Enter your SGPA 
 Enter your roll number 
-Enter your name
-Enter your SGPA
-Enter your roll number
-Enter your name
+Enter your name 
+Enter your SGPA 
+Enter your roll number 
+Enter your name 
 Enter your SGPA 
 Enter your roll number
 Enter your name
@@ -268,7 +263,7 @@ Enter your name
 Enter your SGPA
 Enter your roll number
 Enter your name
-Enter your SGPA
+Enter your SGPA 
 Enter your roll number
 Enter your name
 Enter your SGPA
@@ -324,7 +319,7 @@ roll number     Name    SGPA
 65             Ravindra 8.67
 4              Vijay    9.75
 20             Vikash   8.68
-1.arrange list of students according to roll numbers in ascending order
+1.arrange list of students according to roll numbers in ascending order 
 2.Arrange list of students alphabetically
 3.Find out first ten toppers from a class
 4.Search students according to SGPA
@@ -342,11 +337,24 @@ roll number     Name    SGPA
 15             Mohan    9.45
 20             Vikash   8.68
 7              Pujan    8.67
-65             Ravindra 8.67
-30             Pankaj   8.67
-34             Balram   8.65
-12             Chandan  7.89
-49             Laukesh  7.56
+1.arrange list of students according to roll numbers in ascending order
+2.Arrange list of students alphabetically
+3.Find out first ten toppers from a class
+4.Search students according to SGPA
+5.Search a particular student according to name
+6.Exit
+choose your option :-  4
+Enter SGPA:-  6.44
+Roll Number     Name    SGPA
+1.arrange list of students according to roll numbers in ascending order
+2.Arrange list of students alphabetically
+3.Find out first ten toppers from a class
+4.Search students according to SGPA
+5.Search a particular student according to name
+6.Exit
+choose your option :-  4
+Enter SGPA:-  6.67
+Roll Number     Name    SGPA
 1.arrange list of students according to roll numbers in ascending order
 2.Arrange list of students alphabetically
 3.Find out first ten toppers from a class
@@ -368,7 +376,7 @@ Roll Number     Name    SGPA
 choose your option :-  5
 Enter name :- Pujan
 
-The student  is present :
+ The student  is present :
 Name:-  Pujan
 SGPA :-  8.67
 Roll number :-  7
@@ -378,6 +386,15 @@ Roll number :-  7
 4.Search students according to SGPA
 5.Search a particular student according to name
 6.Exit
+choose your option :-  5
+Enter name :- Raju
+
+Student name not present in our record
+1.arrange list of students according to roll numbers in ascending order
+2.Arrange list of students alphabetically
+3.Find out first ten toppers from a class
+4.Search students according to SGPA
+5.Search a particular student according to name
+6.Exit
 choose your option :-  6
-PS C:\Users\Dharmendra Kumar\C Plus Plus\DSA Lab SIB21 Dharmendra Pandit\Searching and Sorting Lab 1> 
 */
