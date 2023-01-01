@@ -5,12 +5,11 @@
 using namespace std;
 
 template <class T>
+// template <typename T>
 class Stack
 {
-
     class node
     {
-
     public:
         T data;
         node *next;
@@ -23,14 +22,11 @@ class Stack
         node(T data)
         {
             this->data = data;
-            next = nullptr;
+            this->next = NULL;
         }
     };
-
 private:
     node *head;
-    int size;
-
     void delLinkedList(node *head)
     {
         if (!head)
@@ -41,19 +37,22 @@ private:
             delete head;
         }
     }
-
 public:
     Stack()
     {
         head = nullptr;
-        size = 0;
     }
-
     bool empty()
     {
-        return size == 0;
+        if (head==NULL)
+        {
+          return true;
+        }
+        else
+        {
+            return false;
+        }
     }
-
     void push(T data)
     {
         if (empty() == true)
@@ -65,9 +64,7 @@ public:
             node *temp = new node(data, head);
             head = temp;
         }
-        size++;
     }
-
     T pop()
     {
         if (empty() == true)
@@ -80,11 +77,9 @@ public:
             head = head->next;
             T value = temp->data;
             delete temp;
-            size--;
             return value;
         }
     }
-
     T top()
     {
         if (empty() == true)
@@ -93,16 +88,6 @@ public:
         }
         else
             return head->data;
-    }
-
-    int len()
-    {
-        return size;
-    }
-
-    ~Stack()
-    {
-        delLinkedList(head);
     }
 };
 
