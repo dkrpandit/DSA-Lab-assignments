@@ -27,20 +27,10 @@ class Stack
     };
 private:
     node *head;
-    void delLinkedList(node *head)
-    {
-        if (!head)
-            return;
-        else
-        {
-            delLinkedList(head->next);
-            delete head;
-        }
-    }
 public:
     Stack()
     {
-        head = nullptr;
+        head = NULL;
     }
     bool empty()
     {
